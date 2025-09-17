@@ -1,0 +1,664 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;   /* previne rolagem lateral */
+}
+
+:root {
+    --verde-escuro: #14424b;
+    --verde: #2f9364;
+    --laranja: #ff7c37;
+    --degrade-btn: linear-gradient(#fe9611, #ff5c00);
+    --cor1: #a1a1a1;
+    --cor2: #868585;
+}
+
+/* Fundo ocupando toda largura */
+#fundo-verde {
+    background-color: var(--verde-escuro);
+    width: 100%;   /* antes estava 1920px */
+}
+
+/* Container responsivo */
+.container {
+    padding-inline: 10vw; /* 5% da largura da tela */
+    max-width: 1500px;   /* não deixa crescer demais em telas grandes */
+    margin: 0 auto;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+
+}
+
+.nav-list .logo {
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+}
+
+.nav-list ul {
+    display: flex;
+    gap: 45px;
+}
+
+.nav-list a, ul a {
+    color: white;
+    padding-block: 16px;
+}    
+
+.ul li {
+    font-size: 20px;
+}
+
+main .container {
+    display: flex;
+    justify-content: space-between; /* em vez de space-between */
+    align-items: center;
+}
+
+/* Botão padrão */
+.btn-padrao {
+    background: var(--degrade-btn);
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: white;
+}
+
+/* Verificado + botão */
+#img-verif {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+/* Títulos */
+.texto-principal h1 {
+    font-size: 4.5rem;
+    color: white;
+}
+
+.texto-principal h2 {
+    color: white;
+}
+
+.texto-principal, 
+#img-verif li a {
+    color: white;
+}
+
+/* Imagens sempre adaptáveis */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.img-principal img {
+    width: 100%;
+}
+
+/* Hamburguer menu */
+.hamburguer {
+    display: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+    z-index: 20;
+}
+
+.hamburguer span,
+.hamburguer::before,
+.hamburguer::after {
+    content: " ";
+    display: block;
+    width: 30px;
+    height: 4px;
+    background: #fff;
+    margin-top: 5px;
+}
+
+.btn-padrao {
+    display: inline-block; /* garante que transform funcione bem */
+    transition: transform 0.3s ease;
+}
+
+.btn-padrao:hover {
+    transform: scale(1.1);
+}
+
+
+.nav-list ul {
+    align-items: center;
+}
+
+/* Resultados */
+
+.resultados {
+    background: #fa8607;
+}
+
+.resultados .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.resultados-textos {
+    color: white;
+    font-size: 1.6rem;
+    font-weight: 600;
+    width: 50%;
+
+}
+
+.resultados .resultados-dados {
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+
+.resultados .resultados-dados p {
+    font-size: 20px;
+    margin: 0 30px;
+    text-align: center;
+}
+
+section, footer{
+    padding: 2.7rem 0;
+}
+
+.resultados .resultados-dados p span {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.diferencias .container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.diferencias .container .card img{
+    width: 60px;
+}
+
+.diferencias .container .card .titulo {
+    margin: 13px 0;
+    font-weight: 600;
+}
+
+.diferencias .container .card {
+    width: 30%;
+    cursor: pointer;
+    padding: 30px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.diferencias .container .card {
+    box-shadow: 0px 35px 97px -15px rgba(0, 0, 0, 0.08);
+}
+
+.casa .container {
+    display: flex;
+    align-items: center;
+}
+
+.casa .casa-img {
+    width: 50%;
+}
+
+.casa .casa-img img {
+    width: 80%;
+    border-radius: 10px;
+}
+
+.casa .casa-texto {
+    width: 50%;
+}
+
+
+.casa .casa-texto h2 {
+    font-size: 2.5rem;
+}
+
+.casa .casa-texto p {
+    margin: 20px 0;
+    color: rgb(90, 90, 94);
+}
+
+
+.melhores-lugares #azul {
+    font-size: 24px;
+    font-weight: 600;
+    color: #0060f0;
+}
+
+.melhores-lugares h2 {
+    font-size: 2.5rem;
+}
+
+
+.melhores-lugares .cartoes {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.melhores-lugares .cartoes .cartao {
+    width: 30%;
+    text-align: center;
+    padding: 30px 0;
+    border-radius: 20px;
+    box-shadow: 0px 35px 97px -15px rgba(0, 0, 0, 0.08);
+}
+
+.melhores-lugares .cartoes img {
+    width: 80px;
+}
+
+.melhores-lugares .cartoes .local-casa {
+    margin: 5px 0;
+    color: rgb(90, 90, 94);
+}
+
+.melhores-lugares .cartoes .nome-casa {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+
+.melhores-lugares .cartoes .contato {
+    margin-bottom: 20px;
+    color: rgb(90, 90, 94);
+}
+
+.melhores-lugares .cartoes button {
+    cursor: pointer;
+    padding: 10px 20px;
+    color: white;
+    background-color: var(--laranja);
+    border: none;
+    border-radius: 10px;
+}
+
+
+.newsletter {
+    background-color: var(--verde);
+}
+
+.newsletter .box-newsletter {
+    text-align: center;
+    padding: 100px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 15px;
+    background-image: url(/SRC/Imagens/img/background-newsletter.png);
+}
+
+
+.newsletter .box-newsletter h2 {
+    font-size: 2.5rem;
+}
+
+.newsletter .box-newsletter p {
+    margin: 13px 0;
+}
+
+.newsletter .box-newsletter input {
+    width: 35%;
+    padding: 15.8px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    color: #00000098;
+    background-color: rgb(245, 239, 239);
+}
+
+.newsletter .box-newsletter button {
+    font-size: 15px;
+    border: none;
+    outline: none;
+    padding: 15px;
+    border-radius: 15px 15px 15px 15px;
+    color: white;
+    background-color: var(--verde);
+    cursor: pointer;
+}
+
+
+footer {
+    background: var(--verde-escuro);
+}
+
+.footer-container {
+    display: flex;
+    color: white;   
+    justify-content: space-between;
+    padding-inline: 13vw;
+}
+
+.footer-container ul {
+    width: 25%;
+}
+
+.footer-container .redes-sociai img {
+    margin-right: 10px;
+}
+
+.footer-container .redes-sociais ul > p {
+    margin-bottom: 40px;
+}
+
+.footer-container li {
+    margin: 10px;
+}
+
+
+.footer-container h3 {
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+
+/* ========================= */
+/* RESPONSIVIDADE */
+/* ========================= */
+
+/* Tablets e telas médias */
+
+
+/* Celulares */
+@media screen and (max-width: 799px){
+
+    .redes-sociais {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding-inline: 0;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        padding-inline: 10vw;
+    }
+
+    .footer-container ul {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .newsletter .box-newsletter {
+        padding: 50px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 15px;
+        background-image: url(/SRC/Imagens/img/ciruloslww.png);
+        position: relative;
+    }
+
+    main .container {
+        display: block;
+    }
+    
+    .texto-principal h1{
+        font-size: 3.2rem;
+    }
+
+    #img-verif {
+        display: flex;           /* transforma em flex container */
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .texto-principal {
+        width: 100%;
+    }
+
+    #img-verif .btn-padrao{
+        text-align: center;
+        justify-content: center;
+    }
+
+    #img-verif .btn-padrao{
+        display: flex;           /* transforma em flex container */
+        text-align: center;
+    }
+
+    .texto-principal {
+        align-items: center;
+        text-align: center;
+    }
+
+
+    .nav-list {
+        max-height: 80vh;
+    }
+    .nav-list ul{
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 60vw;
+        height: 72vh;
+        background: var(--verde-escuro);
+        clip-path: circle(100px at 90% -15%);
+        transition: 0.7s ease-out;
+    
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        pointer-events: none;
+    }
+
+    .nav-list ul {
+        padding-top: 150px;
+    }
+
+    .nav-list li {
+        gap: 60px
+        
+    }
+
+    .ul.ativo-abrir {
+        clip-path: circle(90vh at 90% -15%);
+        pointer-events: all;
+    }
+
+
+    
+
+    .hamburguer {
+        display: block;
+    }
+
+    .resultados .container, .resultados-dados {
+        flex-direction: column;
+    }
+
+    .resultados-textos {
+        text-align: center;
+        width: 100%;
+        margin-bottom: 15px;
+        max-height: 10%;
+    }
+
+    .diferencias .container {
+        flex-direction: column;
+    }
+
+    .diferencias .container .card {
+        width: 100%;
+    }
+
+    .casa .casa-texto h2 {
+        font-size: 2rem;
+        margin-top: 13px;
+    }
+
+    .casa .container {
+        display: block;
+    }
+
+    .casa .casa-img {
+        width: 100%;
+    }
+
+    .casa .casa-img img{
+        width: 100%;
+    }
+
+    .casa .casa-texto {
+        width: 100%;
+    }
+
+    
+    .melhores-lugares .cartoes {
+        flex-direction: column;
+    }
+
+    .melhores-lugares .cartoes .cartao {
+        width: 100%;
+    }
+
+    .container #h2casa {
+        font-size: 2rem;
+    }
+
+    .newsletter .box-newsletter input {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .newsletter .box-newsletter h2 {
+        font-size: 2rem;
+    }
+
+    .newsletter .box-newsletter button {
+        width: 60%;
+    }
+
+}
+
+@media screen and (min-width: 800px) and (max-width: 950px) {
+    
+    .container { 
+        display: block;
+        padding-inline: 4vw; 
+    }
+
+    .nav-list ul {
+        display: none   ;
+    }
+
+    .hamburguer {
+        display: block;
+    }
+
+    .texto-principal h1{
+        font-size: 3.8rem;
+    }
+
+    .texto-principal h1 br {
+        display: none;
+    }
+
+    .resultados .container {
+        flex-direction: column;
+    }
+
+    .resultados * {
+        width: 100%;
+        text-align: center;
+    }
+
+    .diferencias .container {
+        flex-direction: column;
+    }
+
+    .diferencias .container .card {
+        width: 100%;
+    }
+
+    .casa .casa-img img {
+        width: 90%;
+        height: 100%;
+    }
+
+    .casa .casa-texto h2 {
+        font-size: 2rem;
+    }
+
+    .casa .casa-texto {
+        height: 80%;
+    }
+
+    .newsletter .box-newsletter h2 {
+        font-size: 2rem;
+    }
+
+    .newsletter .box-newsletter input {
+        width: 50%;
+    }
+
+}
+
+@media screen and (min-width: 951px) and (max-width: 1225px) {
+    .container { 
+        padding-inline: 5vw;
+    }
+
+    .texto-principal h1 br {
+        display: none;
+    }
+
+    .texto-principal h1 {
+        font-size: 4rem;
+    }
+
+    .casa .casa-texto h2 {
+        font-size: 2.2rem;
+    }
+
+}
+
+@media screen and (min-width: 1226px) and (max-width: 1500px) {
+    .container {
+        padding-inline: 5vw; 
+    }
+
+    .texto-principal h1 br {
+        display: none;
+    }
+
+    
+
+}
+
+
+@media screen and (min-width: 1501px) {
+    .container {
+        padding-inline: 2vw; 
+    }
+
+    .texto-principal h1 {
+        font-size: 4.4rem;
+    }
+}
